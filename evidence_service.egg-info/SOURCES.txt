@@ -9,4 +9,5 @@ evidence_service.egg-info/SOURCES.txt
 evidence_service.egg-info/dependency_links.txt
 evidence_service.egg-info/requires.txt
 evidence_service.egg-info/top_level.txt
+tests/test_evidence.py
 tests/test_health.py
