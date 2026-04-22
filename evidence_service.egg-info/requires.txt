@@ -1,8 +1,0 @@
-fastapi
-uvicorn
-python-dotenv
-
-[dev]
-pytest
-pytest-cov
-httpx
