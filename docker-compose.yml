@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+
+  app:
+    build: .
+    container_name: evidence-service
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - azurite
+    networks:
+      - backend
+
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    container_name: azurite
+    ports:
+      - "10000:10000"
+    command: "azurite-blob --blobHost 0.0.0.0"
+    volumes:
+      - azurite_data:/data
+    networks:
+      - backend
+
+volumes:
+  azurite_data:
+
+networks:
+  backend:
