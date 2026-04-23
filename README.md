@@ -30,8 +30,8 @@ The system is composed of the following components:
 Client → FastAPI → Storage Client → Azurite (Blob Storage)
 
 ## Architecture Diagram
-  <img width="1902" height="991" alt="Evidence Storage Service drawio" src="https://github.com/user-attachments/assets/3d32742a-3928-4b77-97b0-966346605268" />
-  
+  <img width="1902" height="992" alt="Untitled Diagram drawio" src="https://github.com/user-attachments/assets/6af77d1c-75fa-4e34-a25f-6cc9e6f27465" />
+
 ---
 
 ## Tech Stack
