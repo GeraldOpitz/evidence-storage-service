@@ -200,6 +200,23 @@ Response:
 }
 ```
 
+### List Evidence IDs
+```http
+GET /api/evidence
+```
+
+Response:
+
+```json
+{
+  "items": [
+    {
+      "id": "84555-1231-535"
+    }
+  ]
+}
+```
+
 ---
 
 ### Health Check
@@ -216,6 +233,38 @@ GET /health
 |----------|------------------------------|
 | app      | FastAPI microservice         |
 | azurite  | Azure Storage emulator       |
+
+---
+
+## Persistence
+
+Azurite stores evidence blobs using a Docker volume:
+
+```yaml
+azurite_data:/data
+```
+
+Azurite is configured with:
+
+```bash
+azurite-blob --blobHost 0.0.0.0 --location /data
+```
+
+This ensures evidence data persists after:
+
+```bash
+docker compose down
+docker compose up --build
+```
+
+Note:
+Using:
+
+```bash
+docker compose down -v
+```
+
+removes the volume and deletes persisted data.
 
 ---
 
