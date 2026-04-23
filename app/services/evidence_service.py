@@ -1,18 +1,15 @@
-import uuid
+import json
+from app.clients.azure_blob_client import AzureBlobClient
 
 
 class EvidenceService:
 
     def __init__(self):
-        self.db = {}
+        self.storage = AzureBlobClient()
 
     def save(self, payload: dict) -> str:
-        evidence_id = str(uuid.uuid4())
-        self.db[evidence_id] = payload
-        return evidence_id
+        return self.storage.save(json.dumps(payload))
 
     def get(self, evidence_id: str) -> dict:
-        if evidence_id not in self.db:
-            raise ValueError("Evidence not found")
-
-        return self.db[evidence_id]
+        data = self.storage.get(evidence_id)
+        return json.loads(data)

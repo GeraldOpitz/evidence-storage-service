@@ -6,6 +6,7 @@ Requires-Python: >=3.10
 Requires-Dist: fastapi
 Requires-Dist: uvicorn
 Requires-Dist: python-dotenv
+Requires-Dist: azure-storage-blob
 Provides-Extra: dev
 Requires-Dist: pytest; extra == "dev"
 Requires-Dist: pytest-cov; extra == "dev"

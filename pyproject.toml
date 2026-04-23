@@ -8,6 +8,7 @@ dependencies = [
     "fastapi",
     "uvicorn",
     "python-dotenv",
+    "azure-storage-blob"
 ]
 
 [project.optional-dependencies]

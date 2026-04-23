@@ -1,6 +1,7 @@
 pyproject.toml
 app/main.py
 app/api/routes.py
+app/clients/azure_blob_client.py
 app/clients/storage_client.py
 app/core/config.py
 app/services/evidence_service.py
