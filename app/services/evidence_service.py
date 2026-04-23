@@ -13,3 +13,6 @@ class EvidenceService:
     def get(self, evidence_id: str) -> dict:
         data = self.storage.get(evidence_id)
         return json.loads(data)
+    
+    def list_ids(self) -> list[dict]:
+        return [{"id": evidence_id} for evidence_id in self.storage.list_ids()]

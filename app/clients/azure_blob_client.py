@@ -41,3 +41,7 @@ class AzureBlobClient(StorageClient):
 
         stream = blob_client.download_blob()
         return stream.readall().decode()
+    
+    def list_ids(self) -> list[str]:
+        container_client = self.client.get_container_client(self.container_name)
+        return [blob.name for blob in container_client.list_blobs()]

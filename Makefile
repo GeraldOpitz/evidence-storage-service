@@ -26,7 +26,6 @@ down:
 
 # Swarm deploy
 swarm-deploy:
-	docker swarm init || true
 	docker build -t evidence-service:latest .
 	docker stack deploy -c docker-stack.yml evidence-stack
 

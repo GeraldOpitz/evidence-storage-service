@@ -10,3 +10,7 @@ class StorageClient(ABC):
     @abstractmethod
     def get(self, key: str) -> str:
         pass
+
+    @abstractmethod
+    def list_ids(self) -> list[str]:
+        pass
