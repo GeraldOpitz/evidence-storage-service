@@ -1,9 +1,0 @@
-fastapi
-uvicorn
-python-dotenv
-azure-storage-blob
-
-[dev]
-pytest
-pytest-cov
-httpx
