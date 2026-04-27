@@ -9,7 +9,7 @@ RUN pip install --upgrade pip
 
 COPY pyproject.toml ./
 
-# instalar app
+# install app
 RUN pip install .
 
 FROM python:3.11-slim
@@ -18,7 +18,7 @@ WORKDIR /app
 
 COPY --from=builder /usr/local /usr/local
 
-# copiar código
+# copy code
 COPY app ./app
 
 RUN useradd -m appuser
